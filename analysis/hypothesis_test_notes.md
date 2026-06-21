@@ -12,9 +12,13 @@ The paid conversion rate of the Treatment group is equal to or lower than the pa
 
 The paid conversion rate of the Treatment group is higher than the paid conversion rate of the Control group.
 
+## Test Method
+
+A/B Test (Control vs Treatment)
+
 ## Test Type
 
-One-tailed test
+One-tailed Two-Proportion Z-Test
 
 ## Significance Level
 
@@ -35,4 +39,5 @@ Fail to reject the null hypothesis.
 ## Business Interpretation
 
 A statistically significant increase in paid conversion rate would support rolling out the new onboarding experience to all users.
+
 
