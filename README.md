@@ -116,4 +116,87 @@ Potential risks include:
 
 Therefore, paid conversion rate should be evaluated alongside guardrail metrics such as refund rate and support tickets before making a rollout decision.
 
+## Data Quality Checks
+
+### Missing Values
+
+The dataset was reviewed for missing values before conducting the experiment analysis.
+
+| Column Name      | Missing Values |
+| ---------------- | -------------: |
+| device_type      |             18 |
+| traffic_source   |             24 |
+| engagement_score |             14 |
+| days_to_convert  |           1336 |
+
+All other columns contained no missing values.
+
+**Note:** The large number of missing values in `days_to_convert` is expected because users who did not convert to a paid subscription do not have a conversion date.
+
+---
+
+### Group Count Validation
+
+| Experiment Group | User Count |
+| ---------------- | ---------: |
+| Control          |        693 |
+| Treatment        |        715 |
+| Total            |       1408 |
+
+The Control and Treatment groups were reviewed and found to be reasonably balanced for comparison.
+
+---
+
+### Duplicate User ID Check
+
+| Check                          | Count |
+| ------------------------------ | ----: |
+| Duplicate User IDs (Count > 1) |    16 |
+
+Duplicate user IDs were identified using COUNTIF() and flagged for review before analysis.
+
+---
+
+### Invalid Binary Value Check
+
+The following binary fields were reviewed:
+
+* visited_landing_page
+* started_trial
+* completed_onboarding
+* converted_to_paid
+* refund_requested
+
+Expected values: **0 or 1**
+
+No invalid binary values were identified.
+
+---
+
+### Revenue Outlier Check
+
+Revenue values were reviewed for potential outliers.
+
+| Metric          | Value   |
+| --------------- | ------- |
+| Q1 Revenue      | 0       |
+| Q3 Revenue      | 0       |
+| Maximum Revenue | 8610.72 |
+
+Because the majority of users generated zero revenue, the standard IQR outlier detection method was not appropriate. Revenue values were manually reviewed and retained as valid observations.
+
+---
+
+### Segment Distribution Check
+
+Segment distributions were reviewed across:
+
+* Region
+* Device Type
+* Traffic Source
+* Plan Type
+
+The distributions were examined to ensure that the Control and Treatment groups were reasonably balanced before performing the A/B test analysis.
+
+
 
