@@ -1,59 +1,71 @@
-# Business Problem Statement
+# Onboarding and Activation Campaign
 
-## Background
+## Business Problem Summary
 
-The company launched a new onboarding and activation campaign for new users of its subscription-based digital product. Users were randomly assigned to one of two groups:
+The company launched a new onboarding and activation campaign to improve user conversion and early engagement. Users were randomly assigned to either a Control group (existing onboarding experience) or a Treatment group (new onboarding experience).
 
-* Control Group: Existing onboarding experience
-* Treatment Group: New onboarding and activation campaign
+The key business decision is whether the Treatment experience should be rolled out to all users.
 
-The purpose of the experiment is to determine whether the new onboarding experience improves user behavior and business outcomes compared to the existing experience.
+This decision impacts -  
+1. Product  
+2. Growth
+3. Marketing
+4. Customer Success teams
+5. Future users of the platform.
 
-## Decision to be Made
+The primary metric that should improve is the Paid Conversion Rate, measured using the `converted_to_paid` field.
 
-The primary decision is whether the treatment onboarding experience should be rolled out to all users or whether the company should continue using the current onboarding process.
+Potential risks include increased support burden and customer dissatisfaction. These risks will be monitored using guardrail metrics such as `support_tickets_30d` and `refund_requested`.
 
-## Stakeholders Impacted
+Before recommending rollout, evidence must show that the Treatment group improves conversion while maintaining acceptable performance on guardrail metrics.
 
-The decision impacts:
+## Dataset Used
 
-* Product Management Team
-* Marketing Team
-* Growth Team
-* Customer Success Team
-* Existing and Future Users
+File: `campaign_experiment_data.xlsx`
 
-## Success Metric
+Key fields:
 
-The primary success metric is user conversion rate. The treatment experience should demonstrate a measurable improvement in conversion compared to the control group.
+* experiment_group
+* started_trial
+* completed_onboarding
+* converted_to_paid
+* revenue_30d
+* support_tickets_30d
+* refund_requested
+* engagement_score
 
-Secondary engagement metrics may include:
+## Tools Used
 
-* Activation Rate
-* Feature Adoption
-* User Engagement
-* Subscription Conversion
+* Microsoft Excel
+* Pivot Tables
+* Statistical Analysis
+* Data Validation
 
-## Risks to Monitor
+## Success Metrics
 
-While improving conversion, the company must ensure that the new onboarding experience does not negatively impact user behavior.
+### Primary Metric
 
-Guardrail metrics include:
+* Paid Conversion Rate (`converted_to_paid`)
 
-* User Retention
-* Churn Rate
-* Customer Complaints
-* User Satisfaction
-* Early User Drop-Off
+### Secondary Metrics
+
+* Trial Start Rate (`started_trial`)
+* Onboarding Completion Rate (`completed_onboarding`)
+* Engagement Score (`engagement_score`)
+* Revenue per User (`revenue_30d`)
+
+### Guardrail Metrics
+
+* Refund Request Rate (`refund_requested`)
+* Average Support Tickets (`support_tickets_30d`)
 
 ## Evidence Required
 
-Before making a recommendation, the following evidence is required:
+The Treatment should be recommended only if:
 
-* Comparison of control and treatment group performance
-* Statistical significance testing
-* Evaluation of primary success metrics
-* Evaluation of guardrail metrics
-* Assessment of practical business impact
+1. Conversion rate improves meaningfully.
+2. Results are statistically significant.
+3. Refund rates do not increase materially.
+4. Support ticket volume remains acceptable.
+5. Revenue and engagement improve or remain stable.
 
-The treatment should only be recommended if it demonstrates a statistically significant improvement in conversion while maintaining acceptable performance on all guardrail metrics.
