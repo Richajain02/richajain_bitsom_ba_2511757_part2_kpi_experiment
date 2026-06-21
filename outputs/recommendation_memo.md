@@ -2,40 +2,40 @@
 
 ## Objective
 
-Evaluate whether the new onboarding and activation campaign should be launched to all users.
+Determine whether the new onboarding and activation campaign should be launched to all users.
 
 ## Business Question
 
-Does the treatment onboarding experience improve user conversion and engagement compared to the existing onboarding experience?
+Does the Treatment onboarding experience generate higher paid-user conversion than the existing onboarding experience?
 
-## Success Criteria
+## Primary Success Metric
 
-* Higher conversion rate than the control group
-* Positive impact on user activation and engagement
-* Statistically significant results
+* Paid Conversion Rate (`converted_to_paid`)
 
-## Risks Monitored
+## Supporting Metrics
 
-* Increased churn
-* Lower retention
-* Reduced user satisfaction
-* Negative impact on engagement
+* Trial Start Rate (`started_trial`)
+* Onboarding Completion Rate (`completed_onboarding`)
+* Engagement Score (`engagement_score`)
+* Revenue per User (`revenue_30d`)
 
-## Evidence Required
+## Guardrail Metrics
 
-* Experimental results from control and treatment groups
-* Statistical significance analysis
-* Review of guardrail metrics
-* Business impact assessment
+* Refund Request Rate (`refund_requested`)
+* Support Tickets within 30 Days (`support_tickets_30d`)
 
-## Recommendation Framework
+## Decision Criteria
 
-Recommend full rollout only if:
+Recommend rollout if:
 
-1. Treatment outperforms control on the primary success metric.
-2. Results are statistically significant.
-3. No major deterioration is observed in guardrail metrics.
-4. Expected business impact justifies implementation.
+* Treatment conversion rate exceeds Control conversion rate.
+* Statistical testing confirms the difference is significant.
+* No major increase occurs in refund requests.
+* Support ticket volume remains within acceptable limits.
+* Business impact is positive overall.
 
-Final recommendation will be based on experiment analysis and statistical testing results.
+## Recommendation Approach
+
+The final recommendation will be based on comparison of Control and Treatment groups, statistical significance testing, and review of all guardrail metrics before approving a full rollout.
+
 
