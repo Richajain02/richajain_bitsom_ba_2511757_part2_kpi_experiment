@@ -38,4 +38,10 @@ Recommend rollout if:
 
 The final recommendation will be based on comparison of Control and Treatment groups, statistical significance testing, and review of all guardrail metrics before approving a full rollout.
 
+## North Star Metrics
+
+North Star Metric: Paid Conversion Rate (converted_to_paid).  
+
+This metric was selected because it directly measures the campaign's impact on subscription growth and revenue generation. Supporting metrics and guardrail metrics were also evaluated to ensure that conversion improvements did not negatively affect user experience.
+
 
